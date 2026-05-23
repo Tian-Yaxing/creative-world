@@ -1,0 +1,160 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1779529607694,
+  "projectRoot": "/Users/tyx/creative-house",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "vue",
+        "version": "3.5.34",
+        "category": "frontend"
+      },
+      {
+        "name": "vite",
+        "version": "8.0.12",
+        "category": "build"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "npm run build",
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": "npm run dev",
+    "scripts": {
+      "dev": "vite",
+      "build": "vue-tsc -b && vite build",
+      "preview": "vite preview"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": "ES modules",
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "public",
+      "src"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 2,
+      "lastAccessed": 1779529607669,
+      "keyFiles": [
+        "favicon.svg",
+        "icons.svg"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 2,
+      "lastAccessed": 1779529607670,
+      "keyFiles": [
+        "App.vue",
+        "main.ts"
+      ]
+    },
+    "src/assets": {
+      "path": "src/assets",
+      "purpose": "Static assets",
+      "fileCount": 3,
+      "lastAccessed": 1779529607672,
+      "keyFiles": [
+        "hero.png",
+        "vite.svg",
+        "vue.svg"
+      ]
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 2,
+      "lastAccessed": 1779529607672,
+      "keyFiles": [
+        "ThreeCanvas.vue",
+        "TransitionOverlay.vue"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src/styles/global.scss",
+      "accessCount": 2,
+      "lastAccessed": 1779529652131,
+      "type": "file"
+    },
+    {
+      "path": "src/App.vue",
+      "accessCount": 2,
+      "lastAccessed": 1779529670292,
+      "type": "file"
+    },
+    {
+      "path": "src/scenes/lobby/index.vue",
+      "accessCount": 2,
+      "lastAccessed": 1779529670344,
+      "type": "file"
+    },
+    {
+      "path": "src/components/TransitionOverlay.vue",
+      "accessCount": 2,
+      "lastAccessed": 1779529670395,
+      "type": "file"
+    },
+    {
+      "path": "src/scenes/worlds/WorldPage.vue",
+      "accessCount": 2,
+      "lastAccessed": 1779529670446,
+      "type": "file"
+    },
+    {
+      "path": "src/scenes/entrance/index.vue",
+      "accessCount": 2,
+      "lastAccessed": 1779529670502,
+      "type": "file"
+    },
+    {
+      "path": "vite.config.ts",
+      "accessCount": 2,
+      "lastAccessed": 1779529711022,
+      "type": "file"
+    },
+    {
+      "path": "src/styles/variables.scss",
+      "accessCount": 1,
+      "lastAccessed": 1779529623847,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

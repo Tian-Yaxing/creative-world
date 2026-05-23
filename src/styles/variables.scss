@@ -1,0 +1,39 @@
+// 书卷风配色方案
+// 书卷、典雅、温暖
+
+$primary: #5D4037;     // 深棕色（书脊）
+$secondary: #F5F0E6;   // 米白纸张
+$accent: #C9A961;      // 金色点缀（书签）
+$background: #E8E4D9;  // 古旧纸色
+$text: #2C1810;        // 深棕文字
+$border: #B8A88A;      // 细边框
+$shadow: rgba(93, 64, 55, 0.15); // 柔和阴影
+
+// 门的不同色调
+$door-colors: (
+  1: #6B4423,  // 深木色
+  2: #7B5B3A,  // 榆木色
+  3: #8B6B4A,  // 桦木色
+  4: #9B7B5A,  // 松木色
+);
+
+// 世界页面背景色
+$world-backgrounds: (
+  1: #F0E6D8,
+  2: #E8DCC8,
+  3: #DEC8B8,
+  4: #D4B8A8,
+);
+
+// 响应式断点
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+
+// 动画时长
+$transition-fast: 0.3s;
+$transition-normal: 0.5s;
+$transition-slow: 1s;
+
+// 字体
+$font-serif: 'Noto Serif SC', 'Source Han Serif SC', 'SimSun', serif;
+$font-sans: 'Noto Sans SC', 'Source Han Sans SC', 'PingFang SC', sans-serif;
