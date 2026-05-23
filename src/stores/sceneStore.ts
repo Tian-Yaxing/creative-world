@@ -69,6 +69,16 @@ export const useSceneStore = defineStore('scene', () => {
     endTransition()
   }
 
+  // 返回入口
+  async function returnToEntrance() {
+    startTransition()
+    await new Promise(resolve => setTimeout(resolve, 2000))
+    setWorldId(null)
+    setScene('entrance')
+    setEntrancePhase('distant')
+    endTransition()
+  }
+
   return {
     currentScene,
     entrancePhase,
@@ -85,5 +95,6 @@ export const useSceneStore = defineStore('scene', () => {
     enterLobby,
     enterWorld,
     returnToLobby,
+    returnToEntrance,
   }
 })

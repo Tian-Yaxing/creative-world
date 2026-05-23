@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import * as THREE from 'three'
 import gsap from 'gsap'
 import ThreeCanvas from '@/components/ThreeCanvas.vue'
+import BackToEntrance from '@/components/BackToEntrance.vue'
 import { useSceneStore } from '@/stores/sceneStore'
 import { useWorldStore } from '@/stores/worldStore'
 
@@ -20,17 +21,19 @@ const worldConfig = computed(() => worldStore.getWorldConfig(worldId.value))
 
 // Three.js对象
 let scene: THREE.Scene
-let camera: THREE.PerspectiveCamera
 let particles: THREE.Points
+
+// 相机引用（用于传递给子组件）
+const cameraRef = ref<THREE.PerspectiveCamera | null>(null)
 
 // 设置场景
 const setupScene = (threeScene: THREE.Scene, threeCamera: THREE.PerspectiveCamera) => {
   scene = threeScene
-  camera = threeCamera
+  cameraRef.value = threeCamera
 
   // 相机位置
-  camera.position.set(0, 3, 8)
-  camera.lookAt(0, 2, 0)
+  cameraRef.value.position.set(0, 3, 8)
+  cameraRef.value.lookAt(0, 2, 0)
 
   // 环境光
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.6)
@@ -52,7 +55,7 @@ const setupScene = (threeScene: THREE.Scene, threeCamera: THREE.PerspectiveCamer
   createParticles()
 
   // 相机入场动画（缓慢渐入）
-  gsap.from(camera.position, {
+  gsap.from(cameraRef.value.position, {
     z: 20,
     duration: 3,
     ease: 'power2.out',
@@ -128,11 +131,13 @@ const updateScene = (_deltaTime: number) => {
 // 返回大厅
 const handleReturn = async () => {
   // 退场动画（缓慢渐出）
-  await gsap.to(camera.position, {
-    z: 20,
-    duration: 2.5,
-    ease: 'power2.in',
-  })
+  if (cameraRef.value) {
+    await gsap.to(cameraRef.value.position, {
+      z: 20,
+      duration: 2.5,
+      ease: 'power2.in',
+    })
+  }
 
   await sceneStore.returnToLobby()
   router.push('/lobby')
@@ -150,6 +155,9 @@ onMounted(() => {
       :scene-setup="setupScene"
       :scene-update="updateScene"
     />
+
+    <!-- 返回入口按钮 -->
+    <BackToEntrance :camera="cameraRef" />
 
     <!-- 世界内容区域（预留） -->
     <div class="world-content">
